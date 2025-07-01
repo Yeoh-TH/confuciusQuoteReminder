@@ -48,6 +48,16 @@ def showAllVoices():
         speaker.say(f"Hi my name is {voice.name}" )
         speaker.runAndWait()
 
+while True:
+    # print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+    print(time.strftime("%H:%M:%S", time.localtime()))
+    if time.localtime().tm_hour == 9 and time.localtime().tm_min == 0 and time.localtime().tm_sec == 0:
+        speaker.say("孔子曰：")
+        speaker.runAndWait()
+        speaker.say(confuciusQuotes[random.randint(0, len(confuciusQuotes)-1)])
+        speaker.runAndWait()
+    time.sleep(1)
+
 
 
 
