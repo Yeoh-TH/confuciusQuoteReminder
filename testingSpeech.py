@@ -31,9 +31,9 @@ def selectVoice(name):
             speaker.setProperty('voice', voice.id)
 
 # selectVoice("Grandpa (Chinese (China mainland))")
-selectVoice("Sinji")
+# selectVoice("Sinji")
 # selectVoice("Tingting")
-# selectVoice("Binbin")
+selectVoice("Binbin")
 
 speaker.say("孔日：")
 speaker.runAndWait()
@@ -51,8 +51,13 @@ def showAllVoices():
 while True:
     # print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     print(time.strftime("%H:%M:%S", time.localtime()))
-    if time.localtime().tm_hour == 9 and time.localtime().tm_min == 0 and time.localtime().tm_sec == 0:
-        speaker.say("孔子曰：")
+    # if time.localtime().tm_hour == 9 and time.localtime().tm_min == 0 and time.localtime().tm_sec == 0:
+    #     speaker.say("孔子曰：")
+    #     speaker.runAndWait()
+    #     speaker.say(confuciusQuotes[random.randint(0, len(confuciusQuotes)-1)])
+    #     speaker.runAndWait()
+    if time.localtime().tm_min%2 == 0 and time.localtime().tm_sec == 0:
+        speaker.say("孔曰：")
         speaker.runAndWait()
         speaker.say(confuciusQuotes[random.randint(0, len(confuciusQuotes)-1)])
         speaker.runAndWait()
